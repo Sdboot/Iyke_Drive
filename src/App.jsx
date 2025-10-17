@@ -1,6 +1,4 @@
 import React from "react";
-import { useRef } from "react";
-import emailjs from '@emailjs/browser';
 import { useInView } from "./useInView";
 import "./App.css";
 
@@ -10,25 +8,13 @@ function App() {
   const [headerRef, headerInView] = useInView({ threshold: 0.5 });
   const [heroRef, heroInView] = useInView({ threshold: 0.3 });
   const [aboutRef, aboutInView] = useInView({ threshold: 0.3 });
-  const [galleryRef, galleryInView] = useInView({ threshold: 0.3 });
+const [reviewsRef, reviewsInView] = useInView({ threshold: 0.3 });
   const [contactRef, contactInView] = useInView({ threshold: 0.3 });
-  const form = useRef();
+  
 
-  const sendEmail = (e) => {
-    e.preventDefault();
 
-    emailjs.sendForm(
-      'service_aw978on', 'template_298pvdw',
-      form.current,
-      'KuRJj9G8Uc_gp5VNf' 
-    )
-    .then(() => {
-        console.log('Message sent successfully');
-        form.current.reset();
-    }, (error) => {
-        console.log('Failed to send message:', error);
-    });
-  };
+
+   
 
 
   return (
@@ -38,7 +24,7 @@ function App() {
         <h1>IYKE <b>AUTOMOBILE</b></h1>
         <nav>
           <a href="#about">About</a>
-          <a href="#gallery">Cars</a>
+          <a href="#reviews">Reviews</a>
           <a href="#contact">Contact</a>
         </nav>
       </header>
@@ -99,13 +85,117 @@ function App() {
       </section>
 
      
+<section id="reviews" ref={reviewsRef} className={reviewsInView ? "animate" : ""}>
+  <h2>What Our Customers Say</h2>
+  <div className="reviews-container">
+    <div className="review-card">
+      <div className="review-header">
+        <img src="/customer1.jpg" alt="Customer" />
+        <div>
+          <h3>John Smith</h3>
+          <div className="stars">
+            <i className='bx bxs-star'></i>
+            <i className='bx bxs-star'></i>
+            <i className='bx bxs-star'></i>
+            <i className='bx bxs-star'></i>
+            <i className='bx bxs-star'></i>
+          </div>
+        </div>
+      </div>
+      <p>"Exceptional service! IYKE helped me find my dream Toyota Camry at a great price. Very transparent process."</p>
+    </div>
+
+    <div className="review-card">
+      <div className="review-header">
+        <img src="/customer2.jpg" alt="Customer" />
+        <div>
+          <h3>Sarah Johnson</h3>
+          <div className="stars">
+            <i className='bx bxs-star'></i>
+            <i className='bx bxs-star'></i>
+            <i className='bx bxs-star'></i>
+            <i className='bx bxs-star'></i>
+            <i className='bx bxs-star-half'></i>
+          </div>
+        </div>
+      </div>
+      <p>"Professional and knowledgeable. Got a fantastic deal on a Mercedes. Highly recommend IYKE AUTOMOBILE!"</p>
+    </div>
+    <div className="review-card">
+      <div className="review-header">
+        <img src="/customer2.jpg" alt="Customer" />
+        <div>
+          <h3>Sarah Johnson</h3>
+          <div className="stars">
+            <i className='bx bxs-star'></i>
+            <i className='bx bxs-star'></i>
+            <i className='bx bxs-star'></i>
+            <i className='bx bxs-star'></i>
+            <i className='bx bxs-star-half'></i>
+          </div>
+        </div>
+      </div>
+      <p>"Professional and knowledgeable. Got a fantastic deal on a Mercedes. Highly recommend IYKE AUTOMOBILE!"</p>
+    </div>
+    <div className="review-card">
+      <div className="review-header">
+        <img src="/customer2.jpg" alt="Customer" />
+        <div>
+          <h3>Sarah Johnson</h3>
+          <div className="stars">
+            <i className='bx bxs-star'></i>
+            <i className='bx bxs-star'></i>
+            <i className='bx bxs-star'></i>
+            <i className='bx bxs-star'></i>
+            <i className='bx bxs-star-half'></i>
+          </div>
+        </div>
+      </div>
+      <p>"Professional and knowledgeable. Got a fantastic deal on a Mercedes. Highly recommend IYKE AUTOMOBILE!"</p>
+    </div>
+    <div className="review-card">
+      <div className="review-header">
+        <img src="/customer2.jpg" alt="Customer" />
+        <div>
+          <h3>Sarah Johnson</h3>
+          <div className="stars">
+            <i className='bx bxs-star'></i>
+            <i className='bx bxs-star'></i>
+            <i className='bx bxs-star'></i>
+            <i className='bx bxs-star'></i>
+            <i className='bx bxs-star-half'></i>
+          </div>
+        </div>
+      </div>
+      <p>"Professional and knowledgeable. Got a fantastic deal on a Mercedes. Highly recommend IYKE AUTOMOBILE!"</p>
+    </div>
+
+    <div className="review-card">
+      <div className="review-header">
+        <img src="/customer3.jpg" alt="Customer" />
+        <div>
+          <h3>Michael Obi</h3>
+          <div className="stars">
+            <i className='bx bxs-star'></i>
+            <i className='bx bxs-star'></i>
+            <i className='bx bxs-star'></i>
+            <i className='bx bxs-star'></i>
+            <i className='bx bxs-star'></i>
+          </div>
+        </div>
+      </div>
+      <p>"Best car dealer in town! Found me a perfect Lexus within my budget. The after-sales service is outstanding."</p>
+    </div>
+  </div>
+</section>
+    
       <section id="contact" ref={contactRef} className={contactInView ? "animate" : ""}>
         <div className="contact-head">
           
         </div>
          <div className="animated-bg"></div>
-        <form ref={form} onSubmit={sendEmail}>
-          <h1>Need a Ride? Contact <b className={contactInView ? "animate" : ""}>IYKE</b></h1>
+        <form action="https://formspree.io/f/mrbyjodz" method="POST">
+          <h1>Need a Perfect Ride? Contact <b className={contactInView ? "animate" : ""}>IYKE</b></h1>
           <input type="text" name="user_name" placeholder="Your Name" required />
           <input type="email" name="user_email" placeholder="Your Email" required />
           <select name="car_condition" required>
@@ -113,7 +203,39 @@ function App() {
       <option value="new">New</option>
       <option value="fairly-used">Fairly Used</option>
     </select>
-     <input type="text" name="car_type" placeholder="Type of Car (e.g. Lexus, Toyota Camry, Honda Accord)" required />
+     <select>
+      <option value="">Brand</option>
+      <option value="toyota">Toyota</option>
+      <option value="honda">Honda</option>
+      <option value="highlander">HighLander</option>
+      <option value="benz">Benz</option>
+      <option value="lexus">Lexus</option>
+      <option value="commercial-bus">Commercial Bus</option>
+    </select>
+    <select>
+      <option value="">Price Range</option>
+      <option value="0-5000000">₦0 - ₦5,000,000</option>
+      <option value="5000000-10000000">₦5,000,000 - ₦10,000,000</option>
+      <option value="10000000+">₦10,000,000+</option>
+    </select>
+    <select>
+      <option value="">Year</option>
+      <option value="2020+">2024</option>
+      <option value="2015-2019">2023</option>
+      <option value="2010-2014">2022</option>
+      <option value="2010-2014">2021</option>
+      <option value="2010-2014">2020</option>
+      <option value="2010-2014">2019</option>
+      <option value="2010-2014">2018</option>
+      <option value="2010-2014">2017</option>
+      <option value="2010-2014">2016</option>
+      <option value="2010-2014">2015</option>
+      <option value="2010-2014">2014</option>
+      <option value="2010-2014">2013</option>
+      <option value="2010-2014">2012</option>
+      <option value="2010-2014">2011</option>
+      <option value="2010-2014">2010</option>
+    </select>
           <input type="file" name="car_image" placeholder="Add Sample Image" />
           <textarea name="message" placeholder="Your Message" required></textarea>
           <button type="submit">Submit</button>
@@ -122,6 +244,7 @@ function App() {
             <a href="https://web.facebook.com/salako.akintunde.2025/" target="_blank" rel="noopener" aria-label="Facebook"><i class='bx bxl-facebook'></i></a>
             <a href="https://www.instagram.com/salako1996/" target="_blank" rel="noopener" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
             <a href="https://tiktok.com/@onyinye_chukwu_1208" target="_blank" rel="noopener" aria-label="TikTok"><i class='bx bxl-tiktok'></i></a>
+            <a href="https://wa.me/+2347065892372" target="_blank" rel="noopener" aria-label="WhatsApp"><i class='bx bxl-whatsapp'></i></a>
         </div>
         </form>
        
