@@ -3,8 +3,9 @@ body {
   margin: 0;
   padding-top: 95px;
   color: #222;
-  background: black;
+  background: #fff;
 }
+
 
 header {
   background: black;
@@ -56,6 +57,8 @@ nav a:hover {
 
 #hero {
   position: relative;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 	 background: url('/src/iyke1.jpg') no-repeat center center/cover;
 	background-size: cover;
 	background-position: center;
@@ -64,6 +67,7 @@ nav a:hover {
 	justify-content: center;
 	flex-direction: column;
 	z-index: 1;
+  border-radius: 25px;
 
 }
 #hero::before {
@@ -141,18 +145,20 @@ nav a:hover {
 }
 
 #about{
-  margin-top: 13rem;
-  padding-top: 5rem;
-  background:black !important
+  
+  padding: 4rem 2rem;
+  background:#fff !important;
+  color :black;
   
 }
 .about-head{
-  color: #FFE5B4;
+  margin-bottom: 3rem;
   text-align: center;
 }
 
 .about-head h2{
   font-size: 2rem;
+  color: #fa7807;
 }
 #about.animate .about-head h2 {
     animation: zoomIn 1s ease forwards;
@@ -170,28 +176,32 @@ nav a:hover {
     animation: colorPulse 2s infinite;
 }
 
+.about-iyke {
+  display: flex;
+  gap: 6rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+}
 
 .about-iyke {
 
   width: 80%;
   height: 90vh;
-  margin-left: 5rem;
-  padding: 2rem;
-  color: black;
-  display: flex;
-  align-items: center;
-  gap: 3rem;
-  border-radius: 19px;
-  background: #FFE5B4;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
+
+.about-image-container {
+  position: relative;
+  flex: 0 0 400px;
+}
+
 .about-iyke img {
-  width: 300px;
-  height: 450px;
-  margin-left: 4rem;
+  width: 100%;
+  height: 500px;
   border-radius: 20px;
   object-fit: cover;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 0 20px rgba(250,120,7,0.3);
 }
 
 .about-iyke p{
@@ -202,6 +212,104 @@ nav a:hover {
 .about-iyke p b{
   color: #fa7807;
 }
+.experience-badge {
+  position: absolute;
+  bottom: -10px;
+  right: -20px;
+  background: #fa7807;
+  padding: 1rem;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.experience-badge span {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.experience-badge p {
+  font-size: 1rem;
+  text-align: center;
+  margin: 0;
+}
+
+.about-content {
+  padding-top: 11rem;
+  flex: 1;
+}
+
+.about-content h3 {
+  font-size: 2rem;
+  color: #fa7807;
+  margin-bottom: 1.5rem;
+}
+.about-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.feature {
+  background: rgba(250, 120, 7, 0.1);
+  padding: 1.5rem;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+}
+
+.feature h4 {
+  color: #fa7807;
+  margin-bottom: 0.5rem;
+}
+
+.about-cta {
+  margin-top: 2rem;
+  text-align: center;
+}
+.cta-button {
+  display: inline-block;
+  background: #fa7807;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 0.3rem;
+  margin-bottom: 11rem;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #fff;
+  color: #fa7807;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-iyke {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .about-image-container {
+    flex: 0 0 100%;
+  }
+.experience-badge {
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
 
 .car-grid {
   display: flex;
@@ -225,18 +333,22 @@ nav a:hover {
 }
 
 #contact {
-  width: 70%;
+  position: relative;
+  overflow: hidden;
   background: black;
-  padding: 1rem 2rem;
-  border-radius: 8px;
+  background-size: cover;
+  padding: 4rem 2rem;
+  color: #fff;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border-radius: 25px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important;
-  margin: 4rem 2rem 2rem 10rem;
   min-width: 800px;
 }
 #contact h2 {
   color: #fa7807;
   font-size: 2rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
   text-align: center;
 
 }
@@ -253,21 +365,64 @@ nav a:hover {
   50% { border-color: #fa7807; }
 }
 
+.animated-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #000, #fa7807);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  z-index: -1;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
 form {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  background: #FFE5B4;
-  padding: 2rem 3rem ;
-  margin-left: 12rem;
   border-radius: 16px;
   align-items: center;
   margin-bottom: 1rem;
-  width: 500px;
+  max-width: 600px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 3rem;
+  z-index: 1;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(250, 120, 7, 0.2);
+  animation: formFloat 1s ease-out forwards;
+
+}
+@keyframes formFloat {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 form h1{
+  text-align: center;
   font-size: 2rem;
+  margin-bottom: 2rem;
   padding-bottom: 1rem;
 }
 form h1 b{
@@ -278,38 +433,126 @@ form h1 b{
 }
 
 form input, form textarea, form select {
-  width: 90%;
-  max-width: 500px;
-  padding: 0.7rem;
-  border: 1px solid #fa7807;
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  background: rgba(255, 255, 255, 0.05) ;
+  border: 1px solid rgba(250, 120, 7, 0.3);
   border-radius: 6px;
   font-size: 1rem;
-  color: #fa7807;
-  background: #222;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+form input:focus,
+form select:focus,
+form textarea:focus {
+  outline: none;
+  border-color: #fa7807;
+  box-shadow: 0 0 10px rgba(250, 120, 7, 0.2);
 }
 form input::placeholder, form textarea::placeholder {
-  color: #fa7807;
+  color: rgba(225, 225, 225, 0.7);
   opacity: 0.7;
 }
 form select {
+  width: 105%;
   background: #222;
   color: #fa7807;
 }
+#contact textarea {
+  height: 150px;
+  resize: vertical;
+}
 
 button {
+  position: relative ;
+  overflow: hidden;
   background: #fa7807;
-  color: black;
+  color: #fff;
   border: none;
-  padding: 0.8rem 1.5rem;
+  padding: 1rem;
   border-radius: 6px;
   font-weight: bold;
   font-size: 1rem;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
+  text-transform: capitalize;
+  letter-spacing: 1px;
 }
+button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: 0.5s;
+}
+
 button:hover {
   background: #fff;
   color: #fa7807;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(250, 120, 7, 0.3);
+}
+button:hover::after {
+  left: 100%;
+}
+#contact p {
+  text-align: center;
+  margin-top: 2rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+#contact a {
+  color: #fa7807;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+#contact a:hover {
+  color: #fff;
+}
+#contact .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.7rem;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+#contact input[type="file"] {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+#contact input[type="file"]::-webkit-file-upload-button {
+  background: #fa7807;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-right: 1rem;
+  transition: all 0.3s ease;
+}
+
+#contact input[type="file"]::-webkit-file-upload-button:hover {
+  background: #fff;
+  color: #fa7807;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  #contact form {
+    padding: 2rem;
+  }
+  
+  #contact h1 {
+    font-size: 2.5rem;
+  }
 }
 
 footer {
