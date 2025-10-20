@@ -6,14 +6,14 @@ export default defineConfig({
   plugins: [react()],
   base: '',
    build: {
+    rollupOptions: {
+      external: ['@rolldown/binding-linux-x64-gnu']
+    },
     outDir: 'dist',
     emptyOutDir: true,
     sourcemap: true,
     assetsDir: 'assets',
-    rollupOptions: {
-      output: {
-        manualChunks: undefined
-      }
+    
     }
   }
-})
+)
