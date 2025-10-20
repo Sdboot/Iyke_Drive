@@ -5,6 +5,8 @@ import "./App.css";
 
 
 function App() {
+  const [isNavOpen, setIsNavOpen] = React.useState(false);
+  const closeNav = () => setIsNavOpen(false);
   const [headerRef, headerInView] = useInView({ threshold: 0.5 });
   const [heroRef, heroInView] = useInView({ threshold: 0.3 });
   const [aboutRef, aboutInView] = useInView({ threshold: 0.3 });
@@ -22,7 +24,13 @@ const [reviewsRef, reviewsInView] = useInView({ threshold: 0.3 });
       <header ref={headerRef} className={headerInView ? "animate" : ""} >
         <a href="header"><img src="/src/iyke logoo.jpg" alt="Featured Car" className="hero-img" /></a> 
         <h1>IYKE <b>AUTOMOBILE</b></h1>
-        <nav>
+  
+          <div className="hamburger" onClick={() => setIsNavOpen(!isNavOpen)}>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+       <nav className={isNavOpen ? 'nav-active' : ''}>
           <a href="#about">About</a>
           <a href="#reviews">Reviews</a>
           <a href="#contact">Contact</a>
@@ -70,10 +78,6 @@ const [reviewsRef, reviewsInView] = useInView({ threshold: 0.3 });
         <div className="feature">
           <h4>Quality Assurance</h4>
           <p>Every vehicle undergoes thorough inspection before sale</p>
-        </div>
-        <div className="feature">
-          <h4>Personalized Service</h4>
-          <p>Find the perfect car that matches your lifestyle and budget</p>
         </div>
         <div className="feature">
           <h4>Transparent Process</h4>
