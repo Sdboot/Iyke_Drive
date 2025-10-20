@@ -6,7 +6,7 @@ import "./App.css";
 
 function App() {
   const [isNavOpen, setIsNavOpen] = React.useState(false);
-  const closeNav = () => setIsNavOpen(false);
+ 
   const [headerRef, headerInView] = useInView({ threshold: 0.5 });
   const [heroRef, heroInView] = useInView({ threshold: 0.3 });
   const [aboutRef, aboutInView] = useInView({ threshold: 0.3 });
@@ -22,7 +22,7 @@ const [reviewsRef, reviewsInView] = useInView({ threshold: 0.3 });
   return (
     <div>
       <header ref={headerRef} className={headerInView ? "animate" : ""} >
-        <a href="header"><img src="/src/iyke logoo.jpg" alt="Featured Car" className="hero-img" /></a> 
+        <a href="header"><img src="/iyke logoo.jpg" alt="Featured Car" className="hero-img" /></a> 
         <h1>IYKE <b>AUTOMOBILE</b></h1>
   
           <div className="hamburger" onClick={() => setIsNavOpen(!isNavOpen)}>
@@ -52,7 +52,7 @@ const [reviewsRef, reviewsInView] = useInView({ threshold: 0.3 });
 
         <div className="about-iyke"> 
            <div className="about-image-container">
-        <img src="/src/akintunde.jpeg" alt="Iyke" className="about-img" />
+        <img src="/akintunde.jpeg" alt="Iyke" className="about-img" />
          <div className="experience-badge">
         <span>7 years +</span>
         <p>Years Experience</p>
@@ -243,12 +243,12 @@ const [reviewsRef, reviewsInView] = useInView({ threshold: 0.3 });
           <input type="file" name="car_image" placeholder="Add Sample Image" />
           <textarea name="message" placeholder="Your Message" required></textarea>
           <button type="submit">Submit</button>
-           <p>Email: salakoakintunde8@email.com |  Phone:<a href="tel:+2347065892372" class="btn">+234 706 589 2372</a></p>
-            <div class="social-icons">
-            <a href="https://web.facebook.com/salako.akintunde.2025/" target="_blank" rel="noopener" aria-label="Facebook"><i class='bx bxl-facebook'></i></a>
-            <a href="https://www.instagram.com/salako1996/" target="_blank" rel="noopener" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
-            <a href="https://tiktok.com/@onyinye_chukwu_1208" target="_blank" rel="noopener" aria-label="TikTok"><i class='bx bxl-tiktok'></i></a>
-            <a href="https://wa.me/+2347065892372" target="_blank" rel="noopener" aria-label="WhatsApp"><i class='bx bxl-whatsapp'></i></a>
+           <p>Email: salakoakintunde8@email.com |  Phone:<a href="tel:+2347065892372" className="btn">+234 706 589 2372</a></p>
+            <div className="social-icons">
+            <a href="https://web.facebook.com/salako.akintunde.2025/" target="_blank" rel="noopener" aria-label="Facebook"><i className='bx bxl-facebook'></i></a>
+            <a href="https://www.instagram.com/salako1996/" target="_blank" rel="noopener" aria-label="Instagram"><i className='bx bxl-instagram'></i></a>
+            <a href="https://tiktok.com/@onyinye_chukwu_1208" target="_blank" rel="noopener" aria-label="TikTok"><i className='bx bxl-tiktok'></i></a>
+            <a href="https://wa.me/+2347065892372" target="_blank" rel="noopener" aria-label="WhatsApp"><i className='bx bxl-whatsapp'></i></a>
         </div>
         </form>
        
