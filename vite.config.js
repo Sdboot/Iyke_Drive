@@ -1,19 +1,21 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '',
-   build: {
-    rollupOptions: {
-      external: ['@rolldown/binding-linux-x64-gnu']
-    },
+  base: './',
+  build: {
     outDir: 'dist',
     emptyOutDir: true,
-    sourcemap: true,
-    assetsDir: 'assets',
-    
+    sourcemap: false,
+    rollupOptions: {
+      external: [
+        '@rolldown/binding-linux-x64-gnu',
+        '@rolldown/binding-win32-x64-msvc'
+      ],
+      output: {
+        manualChunks: undefined
+      }
     }
   }
-)
+})
