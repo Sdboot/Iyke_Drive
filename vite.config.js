@@ -14,6 +14,9 @@ export default defineConfig({
         '@rolldown/binding-win32-x64-msvc'
       ],
       output: {
+        format: 'es',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        entryFileNames: 'assets/[name]-[hash].js',
         manualChunks: undefined
       }
     }

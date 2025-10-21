@@ -66,8 +66,8 @@ nav a:hover {
   display: block;
   width: 25px;
   height: 3px;
-  background-color: #fa7807;
-  margin: 5px 0;
+  background-color: #fff;
+  margin: 5px 3px;
   transition: 0.3s;
 }
 
@@ -83,8 +83,8 @@ nav a:hover {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 250px;
-    height: 100vh;
+    width: 200px;
+    height: 80vh;
     background: black;
     display: flex;
     flex-direction: column;
@@ -99,7 +99,7 @@ nav a:hover {
 
   nav a {
     margin: 20px 0;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   /* Hamburger Animation */
@@ -373,17 +373,33 @@ nav a:hover {
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
-  flex-wrap: wrap;
-  justify-content: center;
+  overflow: hidden;
+  position: relative;
 }
 
 .review-card {
   background: rgba(250, 120, 7, 0.1);
   padding: 2rem;
   border-radius: 15px;
-  width: 300px;
+  min-width: 300px;
   border: 1px solid rgba(250, 120, 7, 0.2);
+  animation: slideReviews 10s infinite linear;
   transition: transform 0.3s ease;
+}
+
+@keyframes slideReviews {
+  0% {
+    transform: translateX(0);
+  }
+  33% {
+    transform: translateX(-100%);
+  }
+  66% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .review-card:hover {
@@ -427,24 +443,7 @@ nav a:hover {
   transform: translateY(20px);
 }
 
-#reviews.animate .review-card {
-  animation: slideUp 0.6s ease forwards;
-}
 
-#reviews.animate .review-card:nth-child(2) {
-  animation-delay: 0.2s;
-}
-
-#reviews.animate .review-card:nth-child(3) {
-  animation-delay: 0.4s;
-}
-
-@keyframes slideUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 .car-grid {
   display: flex;
@@ -680,16 +679,6 @@ button:hover::after {
   color: #fa7807;
 }
 
-/* Responsive Design */
-@media (max-width: 900px) {
-  #contact form {
-    padding: 2rem;
-  }
-  
-  #contact h1 {
-    font-size: 2.5rem;
-  }
-}
 
 footer {
   text-align: center;
@@ -700,10 +689,14 @@ footer {
 }
 
 
-/* Modify existing media queries and add new ones */
+
 
 @media screen and (max-width: 768px) {
-  /* Header */
+  body{
+    touch-action: manipulation;
+    -webkit-text-size-adjust: 100%;
+    overflow-y: hidden !important;
+  }
   header {
     padding: 0.3rem 10rem 0.3rem 5rem;
     gap: 10rem;
@@ -711,15 +704,16 @@ footer {
   }
 
   header img {
-    width: 80px;
+    width: 70px;
     height: auto;
   }
 
   /* Hero Section */
   #hero {
-    height: 90vh;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
+    height: 80vh;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .hero-text {
@@ -734,7 +728,7 @@ footer {
 
   /* About Section */
   .about-iyke {
-    width: 80%;
+    width: 100%;
     height: 90vh;
     gap: 6rem;
     flex-direction: row;
@@ -762,33 +756,43 @@ footer {
 
   /* Reviews Section */
   .reviews-container {
-    flex-direction: row;
-    gap: 2rem;
+    width: 90%;
+    margin: 0 auto;
   }
 
   .review-card {
-    width: 300px;
+    width: 280px;
   }
 
   /* Contact Section */
   #contact {
-    min-width: 800px;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    min-width: unset;
+    width: 70%;
+    margin: 2rem 1rem !important;
+    padding: 2rem 1rem;
+    overflow: hidden;
   }
 
   form {
-    max-width: 600px;
-    padding: 3rem;
+    width: 70%;
+    padding: 2rem 1rem;
+    margin: 0 auto;
   }
 
+   form input, 
+  form textarea, 
   form select {
-    width: 105%;
+    width: 70%;
+    max-width: none;
+    font-size: 16px !important;
   }
+
+  
 
   .social-icons {
-    gap: 1.7rem;
-    font-size: 1.5rem;
+    gap: 1rem;
+    font-size: 1.2rem;
+    flex-wrap: wrap;
   }
 }
 
@@ -820,10 +824,4 @@ footer {
     height: auto;
     min-height: 100vh;
   }
-}
-
-/* Force horizontal scrolling if needed */
-body {
-  min-width: 800px;
-  overflow-x: auto;
 }
