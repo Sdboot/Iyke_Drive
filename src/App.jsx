@@ -22,7 +22,7 @@ const [reviewsRef, reviewsInView] = useInView({ threshold: 0.3 });
   return (
     <div>
       <header ref={headerRef} className={headerInView ? "animate" : ""} >
-        <a href="header"><img src="/iyke logoo.jpg" alt="Featured Car" className="hero-img" /></a> 
+        <a href="header"><img src="iyke logoo.jpg" alt="Featured Car" className="hero-img" /></a> 
         <h1>IYKE <b>AUTOMOBILE</b></h1>
   
           <div className="hamburger" onClick={() => setIsNavOpen(!isNavOpen)}>
@@ -94,9 +94,9 @@ const [reviewsRef, reviewsInView] = useInView({ threshold: 0.3 });
   <div className="reviews-container">
     <div className="review-card">
       <div className="review-header">
-        <img src="/customer1.jpg" alt="Customer" />
+        <img src="/michael.jpg" alt="Customer" />
         <div>
-          <h3>John Smith</h3>
+          <h3>Michael Phillip</h3>
           <div className="stars">
             <i className='bx bxs-star'></i>
             <i className='bx bxs-star'></i>
@@ -111,9 +111,9 @@ const [reviewsRef, reviewsInView] = useInView({ threshold: 0.3 });
 
     <div className="review-card">
       <div className="review-header">
-        <img src="/customer2.jpg" alt="Customer" />
+        <img src="/michael.jpg" alt="Customer" />
         <div>
-          <h3>Sarah Johnson</h3>
+          <h3>Michael Phillip</h3>
           <div className="stars">
             <i className='bx bxs-star'></i>
             <i className='bx bxs-star'></i>
@@ -127,9 +127,9 @@ const [reviewsRef, reviewsInView] = useInView({ threshold: 0.3 });
     </div>
     <div className="review-card">
       <div className="review-header">
-        <img src="/customer2.jpg" alt="Customer" />
+        <img src="/michael.jpg" alt="Customer" />
         <div>
-          <h3>Sarah Johnson</h3>
+          <h3>Michael Phillip</h3>
           <div className="stars">
             <i className='bx bxs-star'></i>
             <i className='bx bxs-star'></i>
@@ -143,15 +143,15 @@ const [reviewsRef, reviewsInView] = useInView({ threshold: 0.3 });
     </div>
     <div className="review-card">
       <div className="review-header">
-        <img src="/customer2.jpg" alt="Customer" />
+        <img src="/michael.jpg" alt="Customer" />
         <div>
-          <h3>Sarah Johnson</h3>
+          <h3>Michael Phillip</h3>
           <div className="stars">
             <i className='bx bxs-star'></i>
             <i className='bx bxs-star'></i>
             <i className='bx bxs-star'></i>
             <i className='bx bxs-star'></i>
-            <i className='bx bxs-star-half'></i>
+            <i className='bx bxs-star'></i>
           </div>
         </div>
       </div>
@@ -159,9 +159,9 @@ const [reviewsRef, reviewsInView] = useInView({ threshold: 0.3 });
     </div>
     <div className="review-card">
       <div className="review-header">
-        <img src="/customer2.jpg" alt="Customer" />
+        <img src="/michael.jpg" alt="Customer" />
         <div>
-          <h3>Sarah Johnson</h3>
+          <h3>Michael Phillip</h3>
           <div className="stars">
             <i className='bx bxs-star'></i>
             <i className='bx bxs-star'></i>
@@ -178,7 +178,7 @@ const [reviewsRef, reviewsInView] = useInView({ threshold: 0.3 });
       <div className="review-header">
         <img src="/customer3.jpg" alt="Customer" />
         <div>
-          <h3>Michael Obi</h3>
+          <h3>Michael Phillipi</h3>
           <div className="stars">
             <i className='bx bxs-star'></i>
             <i className='bx bxs-star'></i>
