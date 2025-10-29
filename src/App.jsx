@@ -1,16 +1,19 @@
 import React from "react";
 import { useInView } from "./useInView";
+import { Link } from "react-router-dom";
 import "./App.css";
 
 
 
 function App() {
   const [isNavOpen, setIsNavOpen] = React.useState(false);
- const [isBadgeClicked, setIsBadgeClicked] = React.useState(false);
+  const [isBadgeClicked, setIsBadgeClicked] = React.useState(false);
   const [headerRef, headerInView] = useInView({ threshold: 0.5 });
   const [heroRef, heroInView] = useInView({ threshold: 0.3 });
   const [aboutRef, aboutInView] = useInView({ threshold: 0.3 });
-const [reviewsRef, reviewsInView] = useInView({ threshold: 0.3 });
+  const [servicesRef, servicesInView] = useInView({ threshold: 0.3 });
+  const [blogRef, blogInView] = useInView({ threshold: 0.3 });
+  const [reviewsRef, reviewsInView] = useInView({ threshold: 0.3 });
   const [contactRef, contactInView] = useInView({ threshold: 0.3 });
   
 
@@ -32,6 +35,8 @@ const [reviewsRef, reviewsInView] = useInView({ threshold: 0.3 });
   </div>
        <nav className={isNavOpen ? 'nav-active' : ''}>
           <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#blog">Blog</a>
           <a href="#reviews">Reviews</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -75,14 +80,13 @@ const [reviewsRef, reviewsInView] = useInView({ threshold: 0.3 });
         <p>
           <strong>Welcome!</strong><br /> <br />
            I’m <b> IYKE </b>- A trusted and passionate car euthusiast with over 7 years of experience in the auto industry.<br></br><br></br>
+      
         
-        <b>IYKE AUTOMOBILE</b> was founded by <b>IYKE</b> to help clients find reliable,top-quality rides that
-         fit their lifestyle and budgets.
-         
-         Want a sleek ride,a family car or a durable vehicle for business? <br></br> <br></br>
 
-        <b>IYKE AUTOMOBILE</b> connects you with the right car with a smooth,transparent and stress-free process while delivering honesty,value and 
-        excellemnt customer service every step of the way.
+        <b>IYKE AUTOMOBILE</b> connects you with the right car with a smooth,transparent and stress-free process while delivering honesty,value and
+        excellent customer service every step of the way. <br></br> <br></br>
+
+         Want a sleek ride,a family car or a durable vehicle for business?
           </p>
 
           <div className="about-features">
@@ -91,7 +95,7 @@ const [reviewsRef, reviewsInView] = useInView({ threshold: 0.3 });
           <p>Every vehicle undergoes thorough inspection before sale</p>
         </div>
         <div className="feature">
-          <h4>Transparent Process</h4>
+          <h4>Transparency</h4>
           <p>Honest, value-driven, and excellent customer service</p>
         </div>
       </div>
@@ -99,8 +103,105 @@ const [reviewsRef, reviewsInView] = useInView({ threshold: 0.3 });
         </div>
       </section>
 
-     
-<section id="reviews" ref={reviewsRef} className={reviewsInView ? "animate" : ""}>
+      <section id="services" ref={servicesRef} className={servicesInView ? "animate" : ""}>
+        <div className="services-head">
+          <h2>Our <b className={servicesInView ? "animate" : ""}>Services</b></h2>
+        </div>
+        <div className="services-container">
+          <div className="service-card">
+            <div className="service-icon">
+              <i className='bx bx-search-alt-2'></i>
+            </div>
+            <h3>Car Inspection Services</h3>
+            <p>Comprehensive vehicle inspection by certified professionals to ensure your car's quality and safety.</p>
+            <a href="#contact" className="service-link">Learn More <i className='bx bx-right-arrow-alt'></i></a>
+          </div>
+
+          <div className="service-card">
+            <div className="service-icon">
+              <i className='bx bx-money'></i>
+            </div>
+            <h3>Car Valuation</h3>
+            <p>Get accurate market value assessment for your vehicle based on current market trends.</p>
+            <a href="#contact" className="service-link">Learn More <i className='bx bx-right-arrow-alt'></i></a>
+          </div>
+
+          <div className="service-card">
+            <div className="service-icon">
+              <i className='bx bx-transfer'></i>
+            </div>
+            <h3>Trade-in Options</h3>
+            <p>Flexible trade-in solutions to help you upgrade to your dream car with ease.</p>
+            <a href="#contact" className="service-link">Learn More <i className='bx bx-right-arrow-alt'></i></a>
+          </div>
+
+          <div className="service-card">
+            <div className="service-icon">
+              <i className='bx bx-credit-card'></i>
+            </div>
+            <h3>Auto Financing</h3>
+            <p>Tailored financing solutions to make your car ownership dreams a reality.</p>
+            <a href="#contact" className="service-link">Learn More <i className='bx bx-right-arrow-alt'></i></a>
+          </div>
+        </div>
+      </section>
+
+      <section id="blog" ref={blogRef} className={blogInView ? "animate" : ""}>
+        <div className="blog-head">
+          <h2>Latest <b className={blogInView ? "animate" : ""}>Updates</b></h2>
+        </div>
+        <div className="blog-container">
+          <article className="blog-card">
+            <div className="blog-image">
+              <img src="/Iyke maintainance.jpg" alt="Car Maintenance" />
+              <span className="blog-tag">Tips</span>
+            </div>
+            <div className="blog-content">
+              <h3>Essential Car Maintenance Tips</h3>
+              <p>Learn how to keep your vehicle in top condition with these maintenance tips.</p>
+              <div className="blog-meta">
+                <span><i className='bx bx-calendar'></i> Oct 29, 2025</span>
+                <span><i className='bx bx-user'></i> By IYKE</span>
+              </div>
+              <Link to="/blog/essential-car-maintenance" className="read-more">Read More <i className='bx bx-right-arrow-alt'></i></Link>
+            </div>
+          </article>
+
+          <article className="blog-card">
+            <div className="blog-image">
+              <img src="/market trend.jpg" alt="Market Trends" />
+              <span className="blog-tag">Market</span>
+            </div>
+            <div className="blog-content">
+              <h3>Current Auto Market Trends</h3>
+              <p>Stay informed about the latest trends and developments in the automotive market.</p>
+              <div className="blog-meta">
+                <span><i className='bx bx-calendar'></i> Oct 28, 2025</span>
+                <span><i className='bx bx-user'></i> By IYKE</span>
+              </div>
+              <Link to="/blog/current-auto-market-trends" className="read-more">Read More <i className='bx bx-right-arrow-alt'></i></Link>
+            </div>
+          </article>
+
+          <article className="blog-card">
+            <div className="blog-image">
+              <img src="/top cars.jpg" alt="Car Review" />
+              <span className="blog-tag">Review</span>
+            </div>
+            <div className="blog-content">
+              <h3>Top Cars of 2025</h3>
+              <p>Discover the best performing and most popular vehicles of the year.</p>
+              <div className="blog-meta">
+                <span><i className='bx bx-calendar'></i> Oct 27, 2025</span>
+                <span><i className='bx bx-user'></i> By IYKE</span>
+              </div>
+              <Link to="/blog/top-cars-of-2025" className="read-more">Read More <i className='bx bx-right-arrow-alt'></i></Link>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="reviews" ref={reviewsRef} className={reviewsInView ? "animate" : ""}>
   <h2>What Our Customers Say</h2>
   <div className="reviews-container">
     <div className="review-card">
@@ -210,7 +311,7 @@ const [reviewsRef, reviewsInView] = useInView({ threshold: 0.3 });
         </div>
          <div className="animated-bg"></div>
         <form action="https://formspree.io/f/mrbyjodz" method="POST">
-          <h1>Need a Perfect Ride? Contact <b className={contactInView ? "animate" : ""}>IYKE</b></h1>
+          <h1>Contact <b className={contactInView ? "animate" : ""}>IYKE</b></h1>
           <input type="text" name="user_name" placeholder="Your Name" required />
           <input type="email" name="user_email" placeholder="Your Email" required />
           <select name="car_condition" required>
@@ -254,7 +355,7 @@ const [reviewsRef, reviewsInView] = useInView({ threshold: 0.3 });
           <input type="file" name="car_image" placeholder="Add Sample Image" />
           <textarea name="message" placeholder="Your Message" required></textarea>
           <button type="submit">Submit</button>
-           <p>Email: salakoakintunde8@email.com |  Phone:<a href="tel:+2347065892372" className="btn">+234 706 589 2372</a></p>
+           <p>Email: salakoakintunde8@email.com  Phone:<a href="tel:+2347065892372" className="btn">+234 706 589 2372</a></p>
             <div className="social-icons">
             <a href="https://web.facebook.com/salako.akintunde.2025/" target="_blank" rel="noopener" aria-label="Facebook"><i className='bx bxl-facebook'></i></a>
             <a href="https://www.instagram.com/salako1996/" target="_blank" rel="noopener" aria-label="Instagram"><i className='bx bxl-instagram'></i></a>
