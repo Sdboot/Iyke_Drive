@@ -6,7 +6,7 @@ import "./App.css";
 
 function App() {
   const [isNavOpen, setIsNavOpen] = React.useState(false);
- 
+ const [isBadgeClicked, setIsBadgeClicked] = React.useState(false);
   const [headerRef, headerInView] = useInView({ threshold: 0.5 });
   const [heroRef, heroInView] = useInView({ threshold: 0.3 });
   const [aboutRef, aboutInView] = useInView({ threshold: 0.3 });
@@ -53,9 +53,20 @@ const [reviewsRef, reviewsInView] = useInView({ threshold: 0.3 });
         <div className="about-iyke"> 
            <div className="about-image-container">
         <img src="/akintunde.jpeg" alt="Iyke" className="about-img" />
-         <div className="experience-badge">
+         <div className={`experience-badge ${isBadgeClicked ? 'rotate-trophy' : ''}`} 
+  onClick={() => setIsBadgeClicked(!isBadgeClicked)}
+>
+  {isBadgeClicked ? (
+    <>
+      <i className='bx bxs-trophy'></i>
+       <p>Excellence</p>
+    </>
+  ) : (
+    <>
         <span>7 years +</span>
         <p>Years Experience</p>
+        </>
+  )}
       </div>
     </div> 
 
@@ -257,6 +268,7 @@ const [reviewsRef, reviewsInView] = useInView({ threshold: 0.3 });
       <footer>
         <h2>IYKE AUTOMOBILE</h2>
         <p>&copy; 2025 Iyke Automobile</p>
+        <h6>Designed and Developed by Deborah❤️</h6>
       </footer>
     </div>
   );
