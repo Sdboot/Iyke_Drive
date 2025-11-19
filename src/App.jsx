@@ -218,14 +218,15 @@ function App() {
           </div>
         </div>
       </div>
-      <p>"Exceptional service! IYKE helped me find my dream Toyota Camry at a great price. Very transparent process."</p>
+      <p>"Exceptional service! <br></br>
+        IYKE helped me find my dream Toyota Camry at a great price. Very transparent process."</p>
     </div>
 
     <div className="review-card">
       <div className="review-header">
-        <img src="/michael.jpg" alt="Customer" />
+        <img src="/Ebuka Oyoyo.jpeg" alt="Customer" />
         <div>
-          <h3>Michael Phillip</h3>
+          <h3>Ebuka Oyoyo</h3>
           <div className="stars">
             <i className='bx bxs-star'></i>
             <i className='bx bxs-star'></i>
@@ -235,13 +236,47 @@ function App() {
           </div>
         </div>
       </div>
-      <p>"Professional and knowledgeable. Got a fantastic deal on a Mercedes. Highly recommend IYKE AUTOMOBILE!"</p>
+      <p>"I got my car from IYKE AUTOMOBILE and it has not given me issue for once.
+        He is a good business guy and someone i highly recommend"</p>
     </div>
     <div className="review-card">
       <div className="review-header">
-        <img src="/michael.jpg" alt="Customer" />
+        <img src="/Agbona Victory.jpeg" alt="Customer" />
         <div>
-          <h3>Michael Phillip</h3>
+          <h3>Agbonna Victory</h3>
+          <div className="stars">
+            <i className='bx bxs-star'></i>
+            <i className='bx bxs-star'></i>
+            <i className='bx bxs-star'></i>s
+            <i className='bx bxs-star'></i>
+            <i className='bx bxs-star-half'></i>
+          </div>
+        </div>
+      </div>
+      <p>"IYKE AUTOMOBILE is so honest and trustworthy.He gives you the best cars and advices on how to maintain your car"</p>
+    </div>
+    <div className="review-card">
+      <div className="review-header">
+        <img src="/Omokhai Emmanuel.jpeg" alt="Customer" />
+        <div>
+          <h3>Omokhia Emmanuel</h3>
+          <div className="stars">
+            <i className='bx bxs-star'></i>
+            <i className='bx bxs-star'></i>
+            <i className='bx bxs-star'></i>
+            <i className='bx bxs-star'></i>
+            <i className='bx bxs-star'></i>
+          </div>
+        </div>
+      </div>
+      <p>"What i ordered was what i got.He was honest,i hope we deal again as i'll proudly reer other persons to him.
+        Thank you Iyke"</p>
+    </div>
+    <div className="review-card">
+      <div className="review-header">
+        <img src="/Michael.jpeg" alt="Customer" />
+        <div>
+          <h3>Mr Michael</h3>
           <div className="stars">
             <i className='bx bxs-star'></i>
             <i className='bx bxs-star'></i>
@@ -251,46 +286,14 @@ function App() {
           </div>
         </div>
       </div>
-      <p>"Professional and knowledgeable. Got a fantastic deal on a Mercedes. Highly recommend IYKE AUTOMOBILE!"</p>
-    </div>
-    <div className="review-card">
-      <div className="review-header">
-        <img src="/michael.jpg" alt="Customer" />
-        <div>
-          <h3>Michael Phillip</h3>
-          <div className="stars">
-            <i className='bx bxs-star'></i>
-            <i className='bx bxs-star'></i>
-            <i className='bx bxs-star'></i>
-            <i className='bx bxs-star'></i>
-            <i className='bx bxs-star'></i>
-          </div>
-        </div>
-      </div>
-      <p>"Professional and knowledgeable. Got a fantastic deal on a Mercedes. Highly recommend IYKE AUTOMOBILE!"</p>
-    </div>
-    <div className="review-card">
-      <div className="review-header">
-        <img src="/michael.jpg" alt="Customer" />
-        <div>
-          <h3>Michael Phillip</h3>
-          <div className="stars">
-            <i className='bx bxs-star'></i>
-            <i className='bx bxs-star'></i>
-            <i className='bx bxs-star'></i>
-            <i className='bx bxs-star'></i>
-            <i className='bx bxs-star-half'></i>
-          </div>
-        </div>
-      </div>
-      <p>"Professional and knowledgeable. Got a fantastic deal on a Mercedes. Highly recommend IYKE AUTOMOBILE!"</p>
+      <p>"IYKE AUTOMOBILE which will soon be top 5 automobiles in town offers vehicle of your choice in good condition and maintainance tips"</p>
     </div>
 
     <div className="review-card">
       <div className="review-header">
-        <img src="/customer3.jpg" alt="Customer" />
+        <img src="/Collins Eneluwe.jpeg" alt="Customer" />
         <div>
-          <h3>Michael Phillipi</h3>
+          <h3>Collins Eneluwe</h3>
           <div className="stars">
             <i className='bx bxs-star'></i>
             <i className='bx bxs-star'></i>
@@ -300,7 +303,9 @@ function App() {
           </div>
         </div>
       </div>
-      <p>"Best car dealer in town! Found me a perfect Lexus within my budget. The after-sales service is outstanding."</p>
+      <p>"I purchased a car from IYKE AUTOMOBILE and had a great experience.The car was in an execellent condition and 
+        the transaction was smooth and hassle-free.<br></br> 
+        I highly recommend IYKE"</p>
     </div>
   </div>
 </section>
