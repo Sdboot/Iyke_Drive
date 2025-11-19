@@ -57,7 +57,7 @@ function App() {
 
         <div className="about-iyke"> 
            <div className="about-image-container">
-        <img src="/akintunde.jpeg" alt="Iyke" className="about-img" />
+        <img src="/IK.jpeg" alt="Iyke" className="about-img" />
          <div className={`experience-badge ${isBadgeClicked ? 'rotate-trophy' : ''}`} 
   onClick={() => setIsBadgeClicked(!isBadgeClicked)}
 >
